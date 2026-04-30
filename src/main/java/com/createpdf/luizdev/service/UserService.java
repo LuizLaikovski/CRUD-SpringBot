@@ -4,6 +4,7 @@ import com.createpdf.luizdev.model.User;
 import com.createpdf.luizdev.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.jspecify.annotations.NonNull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,8 +36,8 @@ public class UserService {
                 orElseThrow(() -> new RuntimeException("Usuario não encontrado"));
     }
 
-    public User modifyUser(Long id, User newUser) {
-        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuario não encontrado"));
+    public User modifyUser(Long id, @NonNull User newUser) {
+        User user = getUserId(id);
 
         if (newUser.getName() != null) {
             user.setName(newUser.getName());
@@ -50,7 +51,7 @@ public class UserService {
             user.setBirth(newUser.getBirth());
         }
 
-        if (newUser.getHeight() != 0) {
+        if (newUser.getHeight() != null) {
             user.setHeight(newUser.getHeight());
         }
 

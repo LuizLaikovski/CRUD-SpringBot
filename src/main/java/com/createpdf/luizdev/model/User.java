@@ -20,5 +20,5 @@ public class User {
     private String name;
     private String email;
     private Date birth;
-    private float height;
+    private Double height;
 }
