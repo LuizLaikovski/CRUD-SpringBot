@@ -3,7 +3,6 @@ package com.createpdf.luizdev.service;
 import com.createpdf.luizdev.model.User;
 import com.createpdf.luizdev.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.jspecify.annotations.NonNull;
 import org.springframework.stereotype.Service;
 
